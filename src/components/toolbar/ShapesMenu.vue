@@ -17,13 +17,13 @@
 <script setup>
 import { Icon } from '@iconify/vue'
 import { useShapesStore } from '../../stores/shapes'
-import { addShape } from '../../utils/canvasFunctions'
+import { addShape } from '../../utils/shapeFunctions'
 
 const store = useShapesStore()
 
 const shapes = [
   { name: 'rectangle', icon: 'mdi:square-outline' },
-  { name: 'diamond', icon: 'mdi:diamond-outline' },
+  { name: 'diamond', icon: 'mdi:rhombus-outline' },
   { name: 'triangle', icon: 'mdi:triangle-outline' },
   { name: 'polygon', icon: 'mdi:hexagon-outline' },
   { name: 'star', icon: 'mdi:star-outline' },
@@ -52,9 +52,6 @@ const handleShapeClick = (shape) => {
   switch (shape.name) {
     case 'rectangle':
       // Rectangle is already configured with default width and height
-      break
-    case 'diamond':
-      shapeConfig.config.angle = 45
       break
     case 'triangle':
       shapeConfig.config.points = [
