@@ -14,6 +14,7 @@ import { ref, onMounted } from 'vue'
 import { useShapesStore } from '../stores/shapes'
 import { useCanvasStore } from '../stores/canvas'
 import SelectionMenu from './SelectionMenu.vue'
+import { configureControls } from '../utils/controls'
 
 const store = useShapesStore()
 const canvas = ref(null)
@@ -31,114 +32,7 @@ onMounted(() => {
         preserveObjectStacking: true
       })
 
-      // Configure custom controls
-      window.fabric.Object.prototype.set({
-        transparentCorners: false,
-        cornerColor: '#00a8ff',
-        cornerStrokeColor: '#ffffff',
-        cornerSize: 12,
-        cornerStyle: 'circle',
-        padding: 10,
-        borderColor: '#00a8ff',
-        borderScaleFactor: 2,
-        rotatingPointOffset: 40,
-        hasControls: true,
-        hasBorders: true
-      })
-
-      // Customize control points
-      window.fabric.Object.prototype.controls = {
-        mt: new window.fabric.Control({
-          x: 0,
-          y: -0.5,
-          actionHandler: window.fabric.controlsUtils.scalingYOrSkewingX,
-          cursorStyle: 'ns-resize',
-          render: renderCircleControl,
-          actionName: 'scalingY',
-          sizeX: 12,
-          sizeY: 12
-        }),
-        mb: new window.fabric.Control({
-          x: 0,
-          y: 0.5,
-          actionHandler: window.fabric.controlsUtils.scalingYOrSkewingX,
-          cursorStyle: 'ns-resize',
-          render: renderCircleControl,
-          actionName: 'scalingY',
-          sizeX: 12,
-          sizeY: 12
-        }),
-        ml: new window.fabric.Control({
-          x: -0.5,
-          y: 0,
-          actionHandler: window.fabric.controlsUtils.scalingXOrSkewingY,
-          cursorStyle: 'ew-resize',
-          render: renderCircleControl,
-          actionName: 'scalingX',
-          sizeX: 12,
-          sizeY: 12
-        }),
-        mr: new window.fabric.Control({
-          x: 0.5,
-          y: 0,
-          actionHandler: window.fabric.controlsUtils.scalingXOrSkewingY,
-          cursorStyle: 'ew-resize',
-          render: renderCircleControl,
-          actionName: 'scalingX',
-          sizeX: 12,
-          sizeY: 12
-        }),
-        mtr: new window.fabric.Control({
-          x: 0,
-          y: -0.5,
-          actionHandler: window.fabric.controlsUtils.rotationWithSnapping,
-          cursorStyle: 'crosshair',
-          render: renderCircleControl,
-          actionName: 'rotate',
-          sizeX: 12,
-          sizeY: 12
-        }),
-        bl: new window.fabric.Control({
-          x: -0.5,
-          y: 0.5,
-          actionHandler: window.fabric.controlsUtils.scalingEqually,
-          cursorStyle: 'nwse-resize',
-          render: renderCircleControl,
-          actionName: 'scaling',
-          sizeX: 12,
-          sizeY: 12
-        }),
-        br: new window.fabric.Control({
-          x: 0.5,
-          y: 0.5,
-          actionHandler: window.fabric.controlsUtils.scalingEqually,
-          cursorStyle: 'nwse-resize',
-          render: renderCircleControl,
-          actionName: 'scaling',
-          sizeX: 12,
-          sizeY: 12
-        }),
-        tl: new window.fabric.Control({
-          x: -0.5,
-          y: -0.5,
-          actionHandler: window.fabric.controlsUtils.scalingEqually,
-          cursorStyle: 'nwse-resize',
-          render: renderCircleControl,
-          actionName: 'scaling',
-          sizeX: 12,
-          sizeY: 12
-        }),
-        tr: new window.fabric.Control({
-          x: 0.5,
-          y: -0.5,
-          actionHandler: window.fabric.controlsUtils.scalingEqually,
-          cursorStyle: 'nwse-resize',
-          render: renderCircleControl,
-          actionName: 'scaling',
-          sizeX: 12,
-          sizeY: 12
-        })
-      }
+      // Configure controls
 
       canvasStore.initCanvas(fabricCanvas)
     } else {

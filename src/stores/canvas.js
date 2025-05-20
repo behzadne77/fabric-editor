@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { reactive, ref } from 'vue'
-import { configureObjectDefaults, configureControls } from '../units/controls'
+import { configureObjectDefaults, configureControls } from '../utils/controls'
 
 export const useCanvasStore = defineStore('canvas', () => {
   const canvas = ref(null)
