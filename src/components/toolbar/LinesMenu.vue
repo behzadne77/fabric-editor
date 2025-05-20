@@ -16,14 +16,14 @@
         <!-- Arrow -->
         <g v-if="line.name === 'arrow'">
           <line x1="5" y1="20" x2="30" y2="20" stroke-width="2" />
-          <path d="M30 20 L35 20 L30 15 L30 25 Z" fill="none" stroke-width="2" />
+          <path d="M30 20 L25 15 L25 25 Z" fill="none" stroke-width="2" />
         </g>
         
         <!-- Double Arrow -->
         <g v-if="line.name === 'double-arrow'">
-          <line x1="10" y1="20" x2="30" y2="20" stroke-width="2" />
-          <path d="M5 20 L10 20 L5 15 L5 25 Z" fill="none" stroke-width="2" />
-          <path d="M30 20 L35 20 L30 15 L30 25 Z" fill="none" stroke-width="2" />
+          <line x1="8" y1="20" x2="32" y2="20" stroke-width="2" />
+          <path d="M8 20 L13 15 L13 25 Z" fill="none" stroke-width="2" />
+          <path d="M32 20 L27 15 L27 25 Z" fill="none" stroke-width="2" />
         </g>
         
         <!-- Dashed Line -->
