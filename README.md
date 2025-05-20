@@ -1,17 +1,41 @@
-# Konva Editor
+# Fabric Canvas Editor
 
-A lightweight and modern canvas editor built with Vue 3, Konva, Element Plus, and Tailwind CSS.
+A powerful and modern canvas editor built with Vue 3, Fabric.js, Element Plus, and Tailwind CSS.
 
-## Features
+## ✨ Features
 
-- 🎨 Draw shapes (rectangles, circles, text)
-- 💾 Save and load canvas state
-- 🎯 Select and modify shapes
-- 🎨 Modern UI with Element Plus
-- 🎨 Responsive design with Tailwind CSS
-- 📦 Lightweight and fast
+### 🎨 Rich Shape Library
+- Basic Shapes: Rectangle, Diamond, Triangle
+- Complex Shapes: Polygon, Star, Heart
+- Special Elements: Comment Box, Cloud
+- Customizable: Colors, Stroke Width, Rotation
 
-## Installation
+### 📏 Drawing Tools
+- Multiple Line Types: Straight, Arrow, Dashed
+- Precise Drawing Controls
+- Smart Object Alignment
+
+### 🛠️ Object Manipulation
+- Select and Move Objects
+- Resize and Rotate
+- Bring to Front/Send to Back
+- Group/Ungroup Objects
+- Delete Selected Objects
+
+### 💾 Canvas Management
+- Save Canvas State
+- Load Previous States
+- Export to Image
+- Clear Canvas
+
+### 🎯 User Interface
+- Modern and Clean Design
+- Intuitive Toolbar
+- Icon-based Shape Selection
+- Responsive Layout
+- Dark/Light Mode Support
+
+## 🚀 Getting Started
 
 ```bash
 # Install dependencies
@@ -24,19 +48,27 @@ npm run dev
 npm run build
 ```
 
-## Technologies Used
+## 🛠️ Technologies
 
-- Vue 3
-- Konva
-- Element Plus
-- Tailwind CSS
-- Pinia (State Management)
-- Vite
+- **Vue 3** - Progressive JavaScript Framework
+- **Fabric.js** - Powerful Canvas Library
+- **Element Plus** - UI Component Library
+- **Tailwind CSS** - Utility-First CSS Framework
+- **Pinia** - State Management
+- **Iconify** - Icon Library
+- **Vite** - Next Generation Frontend Tooling
 
-## Contributing
+## 🎨 Usage
+
+1. Select a shape from the toolbar
+2. Click on the canvas to add the shape
+3. Use the selection tool to modify shapes
+4. Save your work or export as image
+
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
+## 📝 License
 
-MIT 
+MIT License - feel free to use this project for your own purposes. 
