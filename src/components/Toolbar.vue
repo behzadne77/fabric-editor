@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-full">
     <!-- Main Menu -->
-    <div class="w-32 bg-white shadow-sm border-r border-gray-200">
+    <div class="w-32 shrink-0 bg-white shadow-sm border-r border-gray-200">
       <div class="flex flex-col items-center py-4 space-y-4 px-2">
         <el-button
           v-for="item in mainMenuItems" 
@@ -23,7 +23,7 @@
     </div>
 
     <!-- Submenu -->
-    <div class="w-64 bg-white shadow-sm">
+    <div class="w-64 shrink-0 bg-white shadow-sm">
       <div class="p-4">
         <h2 class="text-lg font-semibold mb-4 text-gray-800">
           {{ getActiveMenuTitle }}
@@ -61,6 +61,10 @@
             @tool-change="$emit('tool-change', $event)"
           />
         </div>
+        <!-- Text Submenu -->
+        <div v-if="activeMenu === 'text'">
+          <TextMenu />
+        </div>
       </div>
     </div>
   </div>
@@ -71,6 +75,7 @@ import { ref, computed } from 'vue'
 import { Icon } from '@iconify/vue'
 import ShapesMenu from './toolbar/ShapesMenu.vue'
 import LinesMenu from './toolbar/LinesMenu.vue'
+import TextMenu from './toolbar/TextMenu.vue'
 
 const props = defineProps({
   currentTool: {
@@ -85,7 +90,8 @@ const activeMenu = ref('elements')
 const activeElementTab = ref('shapes')
 
 const mainMenuItems = [
-  { id: 'elements', icon: 'mdi:shape-outline', label: 'Elements' }
+  { id: 'elements', icon: 'mdi:shape-outline', label: 'Elements' },
+  { id: 'text', icon: 'mdi:format-text', label: 'Text' }
 ]
 
 const elementTabs = [

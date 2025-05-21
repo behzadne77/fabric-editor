@@ -7,7 +7,7 @@
       />
       
       <el-container class="h-[calc(100vh-90px)] mt-4">
-        <el-aside width="320px">
+        <el-aside width="25rem">
           <Toolbar
             :current-tool="currentTool"
             @tool-change="setTool"
